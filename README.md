@@ -26,24 +26,44 @@ Before you begin, ensure you have the following installed:
 
 Clone the repository to your local machine:
 
-```bash
 git clone https://github.com/Malsha6/gamescore.git
 cd gamescore
 
 ### 2. Install Dependencies
 run the following command to install dependencies:
-```bash
+
 mvn install
 
 ### 3. Configure the application.properties File
 The application.properties file contains configuration details for the database connection and server settings.
-```bash
-# Database Configuration
+
+#Database Configuration
+
 db.url=jdbc:mysql://localhost:3306/gamescore
+
 db.username=root
+
 db.password=root
-# HikariCP Configuration
+
+#HikariCP Configuration
+
 hikari.max-pool-size=10
+
+### 4. API Endpoints
+
+1. Save a Score (POST /api/scores)
+
+  Request body as below:
+  
+    {
+    "userId": 1,
+    "gameId": 101,
+    "score": 2500
+    } 
+
+3. Get Highest Scores for a User (GET /api/scores/user/{userId})
+
+4. Get Top 10 Scores for a Game (GET /api/scores/top10/{gameId})
 
 
 
